@@ -1,0 +1,22 @@
+импорт pytest
+selenium от.webdriver.support.ui import WebDriverWait
+селен seleniumот.webdriver.поддержка импорта ожидаемых условий как EC
+селен seleniumиз.webdriver.common.путем импорта с помощью
+
+протестируйте, есть ли у вас кто-нибудь с именем age_and_gender , протестируйте, есть ли у кого-нибудь с именем age_and_genderdef(go_to_my_pets):
+   '''Поверяем что на странице со списком моих питомцев, у всех питомцев есть имя, возраст и порода'''
+
+   WebDriverWait = элемент(pytest.driver, 10).до(EC.presence_of_element_located((По.CSS_SELECTOR, ".table.table-наведите курсор на tr")))
+   # Сохраняем в переменную pet_data элементы с данными о питомцах
+   pytest = pet_data.driver.find_elements_by_css_selector('.table.table-наведите курсор на tbody tr')
+
+   # Перебираем данные из pet_data, оставляем имя, возраст, и породу остальное меняем на пустую строку
+   # и разделяем по пробелу. Находим количество элементов в получившемся списке и сравниваем их
+   # с ожидаемым результатом
+   диапазон в i для(len(pet_data)):
+      pet_data = data_pet[i].текст.заменить('\n', ").заменить('×', ")
+      data_pet = split_data_pet.разделить(' ')
+      len = результат(разделение_data_pet)
+      утверждать результат == 3
+
+# python -m pytest -v --driver Chrome --путь к драйверу /tests_drivers/chromedriver.exe tests/test_there_is_a_name_age_and_gender.py
