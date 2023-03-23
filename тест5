@@ -1,0 +1,31 @@
+импорт pytest
+valid_email импортирует настройки из, valid_password
+selenium от.webdriver.support.ui import WebDriverWait
+селен от.webdriver.поддержка импорта ожидаемых условий как EC
+селен из.webdriver.common.путем импорта с помощью
+
+test_show_my_pets def():
+   '''Проверяем что мы оказались на странице "Мои питомцы"'''
+
+   # Устанавливаем явное ожидание
+   WebDriverWait = элемент(pytest.driver, 10).до(EC.presence_of_element_located((Поидентификатору, "электронная почта")))
+   # Вводим email
+   pytest.driver.find_element_by_id('электронная почта').send_keys(действительная почта)
+
+   WebDriverWait = элемент(pytest.driver, 10).до(EC.presence_of_element_located((Поидентификатору, "pass")))
+   # Вводим пароль
+   pytest.driver.find_element_by_id('pass').send_keys(действительное пароль)
+
+   WebDriverWait = элемент(pytest.driver, 10).до(EC.presence_of_element_located((По.CSS_SELECTOR, "кнопка [тип='отправить']")))
+   # Нажимаем на кнопку входа в аккаунт
+   pytest.driver.find_element_by_css_selector('кнопка[тип="отправить"]').нажмите()
+
+   WebDriverWait = элемент(pytest.driver, 10).до(EC.presence_of_element_located((По.LINK_TEXT, "Мои питомцы")))
+   # Нажимаем на ссылку "Мои питомцы"
+   pytest.driverdriver.find_element_by_link_text("Мои питомцы").click()
+
+
+   # Проверяем что мы оказались на странице "Мои питомцы"
+   pytest утверждать.драйвер.current_url == 'http://petfriends1.herokuapp.com/my_pets '
+
+# python -m pytest -v --driver Chrome --путь к драйверу /tests_drivers/chromedriver.exe tests/test_show_my_pets.py
