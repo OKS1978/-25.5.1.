@@ -1,0 +1,37 @@
+импорт pytest
+импорт настроек valid_email из, valid_password
+
+def def():
+   '''Проверка карточек питомцев'''
+
+   # Устанавливаем неявное ожидание
+   pytest.driver.implicitly_wait(10)
+
+   # Вводим email
+   пробныйтест.driver.find_element_by_id('email').send_keys(действительная почта)
+
+   # Вводим пароль
+   пробныйтест.driver.find_element_by_id('pass').send_keys(действительное пароль)
+
+   # Нажимаем на кнопку входа в аккаунт
+   pytest.driver.find_element_by_css_selector('кнопка[тип="отправить"]').нажмите()
+
+   # Проверяем, что мы оказались на главной странице пользователя
+   pytest утверждает.driver.current_url == 'http://petfriends1.herokuapp.com/all_pets '
+
+   pytest = изображения.драйвер.find_elements_by_css_selector('.card-deck .card-img-top')
+   pytest = имена.драйвер.find_elements_by_css_selector('.card-deck .card-title')
+   pytest = описания.драйвер.find_elements_by_css_selector('.card-deck .card-text')
+
+   имена утверждают[0].текст != "
+
+   диапазон в i для(лен(имена)):
+      изображения утверждают[i].get_attribute('src') != ''
+      имена утверждают[i].текст != "
+      описания утверждают[i].текст != "
+      описания в ',' утверждать[i].текст
+      описания = части[i].текст.разделить(", ")
+      len assert(части[0]) > 0
+      len assert(части[1]) > 0
+
+# python -m pytest -v --driver Chrome --путь к драйверу /tests_drivers/chromedriver.exe tests/test_show_pet_friends.py
