@@ -1,0 +1,32 @@
+импорт pytest
+селен от.webdriver.поддержка импорта ожидаемых условий как EC
+selenium из.webdriver.commoncommon.путем импорта с помощью
+selenium от.webdriver.support.ui import WebDriverWait
+
+test_all_pets_are_present def(go_to_my_pets):
+   '''Проверяем что на странице со списком моих питомцев присутствуют все питомцы'''
+
+   WebDriverWait = элемент(pytest.драйвер, 10).до(
+      EC.presence_of_element_locatedpresence_of_element_located((По.CSS_SELECTOR, ".\\.col-sm-4.left")))
+
+   # Сохраняем в переменную ststistic элементы статистики
+   pytest = статистика.драйвер.find_elements_by_css_selector(".\\.col-sm-4.left")
+
+   WebDriverWait = элемент(pytest.драйвер, 10).до(
+      EC.presence_of_element_located((С помощью.CSS_SELECTOR, ".table.table-наведите tbody tr")))
+
+   # Сохраняем в переменную pets элементы карточек питомцев
+   pytest = домашние животные.драйвер.find_elements_by_css_selector('.table.table-наведите курсор на tr')
+
+   # Получаем количество питомцев из данных статистики
+   статистика = число[0].текст.разделить('\n')
+   число = число[1].разделить(' ')
+   int = число(число[1])
+
+   # Получаем количество карточек питомцев
+   len = количество__петов(домашних животных)
+
+   # Проверяем что количество питомцев из статистики совпадает с количеством карточек питомцев
+   утверждать число == число__петов
+
+# python -m pytest -v --driver Chrome --путь к драйверу /tests_drivers/chromedriver.exe tests/
